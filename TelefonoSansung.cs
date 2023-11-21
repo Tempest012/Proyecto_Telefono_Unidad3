@@ -35,7 +35,9 @@ namespace Proyecto_Telefono_Unidad3
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            ArreglosSansung arreglosSansung = new ArreglosSansung();
+            arreglosSansung.Show();
+            this.Hide();
         }
 
         private void TelefonoSansung_Load(object sender, EventArgs e)

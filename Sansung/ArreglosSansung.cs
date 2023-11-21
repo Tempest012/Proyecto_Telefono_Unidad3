@@ -16,5 +16,24 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             InitializeComponent();
         }
+
+        private void ArreglosSansung_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int[,] nuneros = new int[5,5];
+
+            
+
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

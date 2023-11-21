@@ -106,6 +106,9 @@
     <EmbeddedResource Include="RedMagic.resx">
       <DependentUpon>RedMagic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sansung\ArreglosSansung.resx">
+      <DependentUpon>ArreglosSansung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelefonoSansung.resx">
       <DependentUpon>TelefonoSansung.cs</DependentUpon>
     </EmbeddedResource>
