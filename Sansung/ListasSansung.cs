@@ -13,7 +13,6 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 {
     public partial class ListasSansung : Form
     {
-        List<Nodo> SamsungLista = new List<Nodo>();
         public ListasSansung()
         {
 
@@ -39,13 +38,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void button1_Click(object sender, EventArgs e)
         {
             insertar();
-
+            mostrarDG();
         }
         public void insertar()
         {
             Nodo Nuevo = new Nodo();
             Nuevo.Dato = Convert.ToString(textNumero.Text);
-
+            
             if (Primero == null)
             {
                 Primero = Nuevo;
@@ -61,12 +60,15 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
         public void mostrarDG()
         {
+            DatosTable.Columns.Clear();
+            DatosTable.ColumnCount = 1;
+            DatosTable.Columns[0].Name = "Nombre";
             Nodo Actual = Primero;
             if (Primero != null)
             {
                 while (Actual != null)
                 {
-
+                    DatosTable.Rows.Add(Actual.Dato);
                     Actual = Actual.Siguiente;
                 }
             }
@@ -151,11 +153,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void button3_Click(object sender, EventArgs e)
         {
             EliminarNodo();
+            mostrarDG();
         }
         //Boton De editar
         private void Editar_Click(object sender, EventArgs e)
         {
             ModificarNodo();
+            mostrarDG();
         }
 
         private void textNumero_TextChanged(object sender, EventArgs e)
