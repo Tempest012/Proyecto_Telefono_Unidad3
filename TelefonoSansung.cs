@@ -49,5 +49,12 @@ namespace Proyecto_Telefono_Unidad3
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ListasSansung listasSansung = new  ListasSansung();
+            listasSansung.Show();
+            this.Hide();
+        }
     }
 }
