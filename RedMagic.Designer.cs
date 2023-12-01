@@ -95,6 +95,7 @@
             this.Controls.Add(this.button1);
             this.Name = "RedMagic";
             this.Text = "RedMagic";
+            this.Load += new System.EventHandler(this.RedMagic_Load);
             this.ResumeLayout(false);
 
         }

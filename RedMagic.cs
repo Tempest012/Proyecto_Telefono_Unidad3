@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Telefono_Unidad3.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,13 @@ namespace Proyecto_Telefono_Unidad3
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+            ListarRedMagic listarRedMagic = new ListarRedMagic();
+            listarRedMagic.Show();
+            this.Hide();
+        }
+
+        private void RedMagic_Load(object sender, EventArgs e)
         {
 
         }
