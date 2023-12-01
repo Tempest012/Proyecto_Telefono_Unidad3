@@ -72,10 +72,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                     Actual = Actual.Siguiente;
                 }
             }
-            else
-            {
-
-            }
+            
 
         }
         public void ModificarNodo()
@@ -83,7 +80,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Nodo Actual = new Nodo();
             Actual = Primero;
             bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textNumero.Text);
+            string nodoBuscado = Convert.ToString(textBuscar.Text);
             if (Primero != null)
             {
                 while (Actual != null && Encontrado != true)
@@ -99,13 +96,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                 }
                 if (!Encontrado)
                 {
-                    
+                    MessageBox.Show("No se encontró");
                 }
             }
-            else
-            {
-                
-            }
+           
         }
         public void EliminarNodo()
         {
@@ -115,7 +109,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Anterior = null;
 
             bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textNumero.Text);
+            string nodoBuscado = Convert.ToString(textBuscar.Text);
             if (Primero != null)
             {
                 while (Actual != null && Encontrado != true)
@@ -142,11 +136,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                 }
                 if (!Encontrado)
                 {
+                    MessageBox.Show("No se encontró");
                 }
             }
-            else
-            {
-            }
+          
         }
 
         //Boton de eliminar
@@ -168,6 +161,16 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
         {
 
         }
