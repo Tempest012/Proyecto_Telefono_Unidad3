@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,8 +21,11 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         public ArreglosSansung()
         {
-       
+
             InitializeComponent();
+
+
+
 
         }
 
@@ -68,20 +72,20 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             dataGridView1.Columns[2].Name = "Memoria";
 
 
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.ReadOnly = false;
+            }
+
             // Verificar si la lista de teléfonos no está vacía
             if (indice > 0)
             {
-                // Reiniciar el índice
-                int i = 0;
-
-                // Iterar sobre los elementos de los arreglos
-                while (i < indice)
+                // Agregar filas al DataGridView con los datos correspondientes
+                for (int i = 0; i < indice; i++)
                 {
-                    // Agregar una nueva fila al DataGridView con los datos correspondientes
+                    // int nuevoprecio = Console.ReadLine;
+                    // arreglo [nuevoprecio] = conver.toint32(Console.Readline);
                     dataGridView1.Rows.Add(nombres[i], modelos[i], memoria[i]);
-
-                    // Incrementar el índice
-                    i++;
                 }
             }
             else
@@ -93,7 +97,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         }
 
-        
+
 
 
         private void ArreglosSansung_Load(object sender, EventArgs e)
@@ -134,6 +138,59 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+        }
+
+
+
+        public void Editar_Click(object sender, EventArgs e)
+        {
+
+            int Indice=0;
+            bool Encontrado = false;
+             string Buscado = Convert.ToString(pato.Text);
+             if (Indice != null)
+             {
+                while (nombres[Indice] != null && Encontrado != true)
+                {
+                    if (nombres[Indice] == Buscado)
+                    {
+                        nombres[Indice] = Convert.ToString(textBox1.Text);
+                        modelos[Indice] = Convert.ToString(textBox2.Text);
+                        memoria[Indice] = Convert.ToInt32(textBox3.Text);
+
+                        Encontrado = true;
+                    }
+                    Indice++;
+                 }
+                 if (!Encontrado)
+                 {
+                     MessageBox.Show("No se encontró");
+                 }
+             }
+
+        }
+
+
+         public void EditarArrglo()
+        { 
+            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pato_TextChanged(object sender, EventArgs e)
         {
 
         }

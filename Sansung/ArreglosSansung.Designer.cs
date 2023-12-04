@@ -39,6 +39,8 @@
             this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pato = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +57,16 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 132);
+            this.textBox1.Location = new System.Drawing.Point(54, 86);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(95, 22);
             this.textBox1.TabIndex = 2;
@@ -72,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 93);
+            this.label1.Location = new System.Drawing.Point(12, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 3;
@@ -82,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 182);
+            this.label2.Location = new System.Drawing.Point(51, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 16);
             this.label2.TabIndex = 4;
@@ -90,7 +93,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 226);
+            this.textBox2.Location = new System.Drawing.Point(54, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 5;
@@ -98,7 +101,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(66, 317);
+            this.textBox3.Location = new System.Drawing.Point(54, 249);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 6;
@@ -107,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 276);
+            this.label3.Location = new System.Drawing.Point(44, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 16);
             this.label3.TabIndex = 7;
@@ -122,6 +125,7 @@
             this.Editar.TabIndex = 8;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Eliminar
             // 
@@ -143,11 +147,31 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 312);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Ingresa Nombre";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // pato
+            // 
+            this.pato.Location = new System.Drawing.Point(55, 353);
+            this.pato.Name = "pato";
+            this.pato.Size = new System.Drawing.Size(100, 22);
+            this.pato.TabIndex = 12;
+            this.pato.TextChanged += new System.EventHandler(this.pato_TextChanged);
+            // 
             // ArreglosSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pato);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Editar);
@@ -182,5 +206,7 @@
         private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox pato;
     }
 }
