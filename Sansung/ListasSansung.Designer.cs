@@ -36,12 +36,18 @@
             this.DatosTable = new System.Windows.Forms.DataGridView();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.MDeModelo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Memoriasafhoaehef = new System.Windows.Forms.TextBox();
+            this.estabienbaratojoven = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).BeginInit();
             this.SuspendLayout();
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(74, 219);
+            this.Guardar.Location = new System.Drawing.Point(15, 395);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(100, 23);
             this.Guardar.TabIndex = 0;
@@ -51,7 +57,7 @@
             // 
             // textNumero
             // 
-            this.textNumero.Location = new System.Drawing.Point(74, 94);
+            this.textNumero.Location = new System.Drawing.Point(74, 62);
             this.textNumero.Name = "textNumero";
             this.textNumero.Size = new System.Drawing.Size(100, 22);
             this.textNumero.TabIndex = 1;
@@ -60,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 62);
+            this.label1.Location = new System.Drawing.Point(39, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 16);
             this.label1.TabIndex = 2;
@@ -69,7 +75,7 @@
             // 
             // Editar
             // 
-            this.Editar.Location = new System.Drawing.Point(74, 274);
+            this.Editar.Location = new System.Drawing.Point(141, 395);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(100, 23);
             this.Editar.TabIndex = 3;
@@ -79,7 +85,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(74, 331);
+            this.Eliminar.Location = new System.Drawing.Point(267, 395);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(100, 23);
             this.Eliminar.TabIndex = 4;
@@ -90,7 +96,7 @@
             // DatosTable
             // 
             this.DatosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosTable.Location = new System.Drawing.Point(373, 62);
+            this.DatosTable.Location = new System.Drawing.Point(369, 23);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
@@ -100,7 +106,7 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(74, 161);
+            this.textBuscar.Location = new System.Drawing.Point(74, 355);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(100, 22);
             this.textBuscar.TabIndex = 6;
@@ -109,18 +115,76 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 129);
+            this.label2.Location = new System.Drawing.Point(12, 326);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(248, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Elemento a buscar para editar o eliminar";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // MDeModelo
+            // 
+            this.MDeModelo.Location = new System.Drawing.Point(74, 139);
+            this.MDeModelo.Name = "MDeModelo";
+            this.MDeModelo.Size = new System.Drawing.Size(100, 22);
+            this.MDeModelo.TabIndex = 8;
+            this.MDeModelo.TextChanged += new System.EventHandler(this.MDeModelo_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(71, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Ingresa el modelo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(64, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Ingresa la memoria";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // Memoriasafhoaehef
+            // 
+            this.Memoriasafhoaehef.Location = new System.Drawing.Point(74, 207);
+            this.Memoriasafhoaehef.Name = "Memoriasafhoaehef";
+            this.Memoriasafhoaehef.Size = new System.Drawing.Size(100, 22);
+            this.Memoriasafhoaehef.TabIndex = 11;
+            this.Memoriasafhoaehef.TextChanged += new System.EventHandler(this.Memoriasafhoaehef_TextChanged);
+            // 
+            // estabienbaratojoven
+            // 
+            this.estabienbaratojoven.Location = new System.Drawing.Point(74, 272);
+            this.estabienbaratojoven.Name = "estabienbaratojoven";
+            this.estabienbaratojoven.Size = new System.Drawing.Size(100, 22);
+            this.estabienbaratojoven.TabIndex = 12;
+            this.estabienbaratojoven.TextChanged += new System.EventHandler(this.estabienbaratojoven_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 242);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Ingrese el precio";
+            // 
             // ListasSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.estabienbaratojoven);
+            this.Controls.Add(this.Memoriasafhoaehef);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MDeModelo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.DatosTable);
@@ -148,5 +212,11 @@
         private System.Windows.Forms.DataGridView DatosTable;
         private System.Windows.Forms.TextBox textBuscar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox MDeModelo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Memoriasafhoaehef;
+        private System.Windows.Forms.TextBox estabienbaratojoven;
+        private System.Windows.Forms.Label label5;
     }
 }

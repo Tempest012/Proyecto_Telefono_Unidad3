@@ -20,6 +20,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Ultimo = null;
 
             InitializeComponent();
+
         }
 
         private void ListasSansung_Load(object sender, EventArgs e)
@@ -44,6 +45,9 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             Nodo Nuevo = new Nodo();
             Nuevo.Dato = Convert.ToString(textNumero.Text);
+            Nuevo.Model=Convert.ToString(MDeModelo.Text);
+            Nuevo.Memoria=Convert.ToString(Memoriasafhoaehef.Text);
+            Nuevo.Precios=Convert.ToString(estabienbaratojoven.Text);
             
             if (Primero == null)
             {
@@ -61,14 +65,19 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         public void mostrarDG()
         {
             DatosTable.Columns.Clear();
-            DatosTable.ColumnCount = 1;
+            DatosTable.ColumnCount = 4;
             DatosTable.Columns[0].Name = "Nombre";
+            DatosTable.Columns[1].Name = "Modelo";
+            DatosTable.Columns[2].Name = "Memoria";
+            DatosTable.Columns[3].Name = "Precios";
+
             Nodo Actual = Primero;
             if (Primero != null)
             {
                 while (Actual != null)
                 {
-                    DatosTable.Rows.Add(Actual.Dato);
+                    DatosTable.Rows.Add(Actual.Dato,Actual.Model,Actual.Memoria,Actual.Precios);
+             
                     Actual = Actual.Siguiente;
                 }
             }
@@ -88,7 +97,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                     if (Actual.Dato == nodoBuscado)
                     {
                         Actual.Dato = Convert.ToString(textNumero.Text);
-                        
+                        Actual.Model = Convert.ToString(MDeModelo.Text);
+                        Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                        Actual.Precios = Convert.ToString(estabienbaratojoven.Text);
+
 
                         Encontrado = true;
                     }
@@ -171,6 +183,26 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
 
         private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MDeModelo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Memoriasafhoaehef_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void estabienbaratojoven_TextChanged(object sender, EventArgs e)
         {
 
         }
