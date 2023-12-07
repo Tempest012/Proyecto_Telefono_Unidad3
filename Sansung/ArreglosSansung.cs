@@ -24,7 +24,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
             InitializeComponent();
 
-
+            Eliminar.Click += Eliminar_Click_1;
 
 
         }
@@ -189,45 +189,45 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
 
 
-        public void Eliminar_Click(object sender, EventArgs e)
-        {
-            int Indice = 0;
-            bool Encontrado = false;
-            string Buscado = pato.Text;
+        //public void Eliminar_Click(object sender, EventArgs e)
+        //{
+        //    int Indice = 0;
+        //    bool Encontrado = false;
+        //    string Buscado = pato.Text;
 
-            while (Indice < indice && !Encontrado)
-            {
-                if (nombres[Indice] == Buscado)
-                {
-                    // Desplazar los elementos restantes para llenar el espacio eliminado
-                    for (int i = Indice; i < indice - 1; i++)
-                    {
-                        nombres[i] = null;
-                        modelos[i] = null;
-                        memoria[i] = 0;
-                    }
+        //    while (Indice < indice && !Encontrado)
+        //    {
+        //        if (nombres[Indice] == Buscado)
+        //        {
+        //            // Desplazar los elementos restantes para llenar el espacio eliminado
+        //            for (int i = Indice; i < indice - 1; i++)
+        //            {
+        //                nombres[i] = null;
+        //                modelos[i] = null;
+        //                memoria[i] = 0;
+        //            }
 
-                    // Decrementar el índice
-                    indice--;
+        //            // Decrementar el índice
+        //            indice--;
 
-                    Encontrado = true;
-                    MessageBox.Show($"El elemento {Buscado} ha sido eliminado correctamente.");
+        //            Encontrado = true;
+        //            MessageBox.Show($"El elemento {Buscado} ha sido eliminado correctamente.");
 
-                    // Puedes imprimir los arreglos o realizar otras operaciones según tus necesidades
-                    ImprimirArreglos();
+        //            // Puedes imprimir los arreglos o realizar otras operaciones según tus necesidades
+        //            ImprimirArreglos();
 
-                    break; // Salir del bucle una vez que se ha encontrado y eliminado el elemento
-                }
-                Indice++;
-            }
+        //            break; // Salir del bucle una vez que se ha encontrado y eliminado el elemento
+        //        }
+        //        Indice++;
+        //    }
 
-            if (!Encontrado)
-            {
-                MessageBox.Show("No se encontró el nombre proporcionado en el arreglo. No se realizó la eliminación.");
-            }
+        //    if (!Encontrado)
+        //    {
+        //        MessageBox.Show("No se encontró el nombre proporcionado en el arreglo. No se realizó la eliminación.");
+        //    }
 
-            mostrarTS(); // Mostrar los datos actualizados después de la eliminación
-        }
+        //    mostrarTS(); // Mostrar los datos actualizados después de la eliminación
+        //}
 
 
         public void EditarArrglo()
@@ -253,7 +253,58 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         private void Eliminar_Click_1(object sender, EventArgs e)
         {
-
+            string nombreAEliminar = pato.Text;
+            EliminarPorNombre(nombreAEliminar);
         }
+
+
+        public void EliminarPorNombre(string nombre)
+        {
+            List<int> indicesEncontrados = new List<int>();
+
+            // Busca todos los índices correspondientes al nombre
+            for (int i = 0; i < nombres.Length; i++)
+            {
+                if (nombres[i] == nombre)
+                {
+                    indicesEncontrados.Add(i);
+                }
+            }
+
+            // Elimina los elementos encontrados en orden inverso para evitar problemas con los desplazamientos
+            foreach (int indice in indicesEncontrados.OrderByDescending(x => x))
+            {
+                EliminarElemento(indice);
+            }
+
+            ImprimirArreglos();
+            mostrarTS();
+        }
+
+        private void EliminarElemento(int indice)
+        {
+            // Desplaza los elementos después del índice hacia atrás para "eliminar" el elemento
+            for (int i = indice; i < this.indice - 1; i++)
+            {
+                nombres[i] = nombres[i + 1];
+                modelos[i] = modelos[i + 1];
+                memoria[i] = memoria[i + 1];
+            }
+
+            // Decrementa el índice
+            this.indice--;
+
+            // Redimensiona los arreglos para eliminar el último elemento duplicado
+            Array.Resize(ref nombres, nombres.Length - 1);
+            Array.Resize(ref modelos, modelos.Length - 1);
+            Array.Resize(ref memoria, memoria.Length - 1);
+
+            MessageBox.Show($"El elemento con nombre '{nombres[indice]}' ha sido eliminado correctamente.");
+        }
+
+
+
+
+
     }
 }
