@@ -120,8 +120,14 @@
     <EmbeddedResource Include="Sansung\ArreglosSansung.resx">
       <DependentUpon>ArreglosSansung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sansung\ColasSansung.resx">
+      <DependentUpon>ColasSansung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sansung\ListasSansung.resx">
       <DependentUpon>ListasSansung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sansung\PilasSansung.resx">
+      <DependentUpon>PilasSansung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelefonoSansung.resx">
       <DependentUpon>TelefonoSansung.cs</DependentUpon>

@@ -56,5 +56,12 @@ namespace Proyecto_Telefono_Unidad3
             listasSansung.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ColasSansung colasSansung = new ColasSansung();
+            colasSansung.Show();
+            this.Hide();
+        }
     }
 }

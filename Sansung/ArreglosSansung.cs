@@ -105,6 +105,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             insertar();
@@ -116,6 +117,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
 
         }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -147,34 +149,88 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         public void Editar_Click(object sender, EventArgs e)
         {
-
-            int Indice=0;
+            int Indice = 0;
             bool Encontrado = false;
-             string Buscado = Convert.ToString(pato.Text);
-             if (Indice != null)
-             {
-                while (nombres[Indice] != null && Encontrado != true)
-                {
-                    if (nombres[Indice] == Buscado)
-                    {
-                        nombres[Indice] = Convert.ToString(textBox1.Text);
-                        modelos[Indice] = Convert.ToString(textBox2.Text);
-                        memoria[Indice] = Convert.ToInt32(textBox3.Text);
+            string Buscado = pato.Text;
 
+            while (Indice < indice && !Encontrado)
+            {
+                if (nombres[Indice] == Buscado)
+                {
+                    nombres[Indice] = textBox1.Text;
+                    modelos[Indice] = textBox2.Text;
+
+                    // Asegurémonos de manejar la conversión de manera segura para evitar excepciones
+                    if (int.TryParse(textBox3.Text, out int nuevaMemoria))
+                    {
+                        memoria[Indice] = nuevaMemoria;
                         Encontrado = true;
                     }
-                    Indice++;
-                 }
-                 if (!Encontrado)
-                 {
-                     MessageBox.Show("No se encontró");
-                 }
-             }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un valor válido para la memoria (número entero).");
+                        return; // Salir del método si la conversión falla
+                    }
+                }
+                Indice++;
+            }
 
+            if (!Encontrado)
+            {
+                MessageBox.Show("No se encontró el nombre proporcionado en el arreglo.");
+            }
+            else
+            {
+                // Puedes imprimir los arreglos o realizar otras operaciones según tus necesidades
+                ImprimirArreglos();
+            }
+            mostrarTS();
         }
 
 
-         public void EditarArrglo()
+
+        public void Eliminar_Click(object sender, EventArgs e)
+        {
+            int Indice = 0;
+            bool Encontrado = false;
+            string Buscado = pato.Text;
+
+            while (Indice < indice && !Encontrado)
+            {
+                if (nombres[Indice] == Buscado)
+                {
+                    // Desplazar los elementos restantes para llenar el espacio eliminado
+                    for (int i = Indice; i < indice - 1; i++)
+                    {
+                        nombres[i] = null;
+                        modelos[i] = null;
+                        memoria[i] = 0;
+                    }
+
+                    // Decrementar el índice
+                    indice--;
+
+                    Encontrado = true;
+                    MessageBox.Show($"El elemento {Buscado} ha sido eliminado correctamente.");
+
+                    // Puedes imprimir los arreglos o realizar otras operaciones según tus necesidades
+                    ImprimirArreglos();
+
+                    break; // Salir del bucle una vez que se ha encontrado y eliminado el elemento
+                }
+                Indice++;
+            }
+
+            if (!Encontrado)
+            {
+                MessageBox.Show("No se encontró el nombre proporcionado en el arreglo. No se realizó la eliminación.");
+            }
+
+            mostrarTS(); // Mostrar los datos actualizados después de la eliminación
+        }
+
+
+        public void EditarArrglo()
         { 
             
 
@@ -191,6 +247,11 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
 
         private void pato_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminar_Click_1(object sender, EventArgs e)
         {
 
         }

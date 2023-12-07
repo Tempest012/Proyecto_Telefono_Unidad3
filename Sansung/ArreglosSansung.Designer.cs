@@ -57,7 +57,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(34, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(156, -21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 1;
@@ -135,6 +135,7 @@
             this.Eliminar.TabIndex = 9;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click_1);
             // 
             // dataGridView1
             // 

@@ -13,6 +13,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 {
     public partial class ListasSansung : Form
     {
+
         public ListasSansung()
         {
 
@@ -70,6 +71,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             DatosTable.Columns[1].Name = "Modelo";
             DatosTable.Columns[2].Name = "Memoria";
             DatosTable.Columns[3].Name = "Precios";
+
 
             Nodo Actual = Primero;
             if (Primero != null)
