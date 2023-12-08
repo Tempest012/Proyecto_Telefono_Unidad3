@@ -42,6 +42,7 @@
             this.Memoriasafhoaehef = new System.Windows.Forms.TextBox();
             this.estabienbaratojoven = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,11 +97,11 @@
             // DatosTable
             // 
             this.DatosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosTable.Location = new System.Drawing.Point(369, 23);
+            this.DatosTable.Location = new System.Drawing.Point(305, 12);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
-            this.DatosTable.Size = new System.Drawing.Size(378, 329);
+            this.DatosTable.Size = new System.Drawing.Size(483, 365);
             this.DatosTable.TabIndex = 5;
             this.DatosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -174,11 +175,22 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ingrese el precio";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(590, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Atras";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // ListasSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.estabienbaratojoven);
             this.Controls.Add(this.Memoriasafhoaehef);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.TextBox Memoriasafhoaehef;
         private System.Windows.Forms.TextBox estabienbaratojoven;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

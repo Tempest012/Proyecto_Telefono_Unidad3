@@ -19,7 +19,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Primero = null;
             InitializeComponent();
         }
-
+        
         private void PilasSansung_Load(object sender, EventArgs e)
         {
 
@@ -169,6 +169,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void DatosTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelefonoSansung telefonoSansung = new TelefonoSansung();
+            telefonoSansung.Show();
+            this.Hide();
         }
     }
 }

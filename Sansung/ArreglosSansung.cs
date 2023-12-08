@@ -302,9 +302,11 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             MessageBox.Show($"El elemento con nombre '{nombres[indice]}' ha sido eliminado correctamente.");
         }
 
-
-
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TelefonoSansung telefonoSansung = new TelefonoSansung();
+            telefonoSansung.Show();
+            this.Hide();
+        }
     }
 }

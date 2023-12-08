@@ -153,6 +153,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                     MessageBox.Show("No se encontró");
                 }
             }
+            else
+            {
+                MessageBox.Show("Esta Vacía");
+            }
           
         }
 
@@ -207,6 +211,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void estabienbaratojoven_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TelefonoSansung telefonoSansung = new TelefonoSansung();
+            telefonoSansung.Show();
+            this.Hide();
         }
     }
 }

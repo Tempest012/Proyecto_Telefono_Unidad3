@@ -16,6 +16,8 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private Nodo Primero = new Nodo();
         private Nodo Ultimo = new Nodo();
 
+
+
         public ColasSansung()
         {
             Primero = null;
@@ -31,10 +33,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             Nodo Nuevo = new Nodo();
             Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model=Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria=Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios=Convert.ToString(estabienbaratojoven.Text);
-            
+            Nuevo.Model = Convert.ToString(MDeModelo.Text);
+            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+            Nuevo.Precios = Convert.ToString(estabienbaratojoven.Text);
+
             if (Primero == null)
             {
                 Primero = Nuevo;
@@ -47,7 +49,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                 Nuevo.Siguiente = null;
                 Ultimo = Nuevo;
             }
-        
+
         }
         public void MostraCola()
         {
@@ -97,6 +99,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                     MessageBox.Show("No se encontró");
                 }
             }
+        } 
+        public void EditarCola()
+        {
+
         }
         public void EliminarCola()
         {
@@ -189,6 +195,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelefonoSansung telefonoSansung = new TelefonoSansung();
+            telefonoSansung.Show();
+            this.Hide();
         }
     }
 }
