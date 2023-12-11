@@ -35,18 +35,14 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         public void insertar()
         {
-            // Verificar si hay espacio disponible en los arreglos
             if (indice < nombres.Length)
             {
-                // Almacenar el nombre, modelo y memoria en los arreglos
                 nombres[indice] = Convert.ToString(textBox1.Text);
                 modelos[indice] = Convert.ToString(textBox2.Text);
                 memoria[indice] = Convert.ToInt32(textBox3.Text);
 
-                // Incrementar el índice
                 indice++;
 
-                // Puedes imprimir los arreglos o realizar otras operaciones según tus necesidades
                 ImprimirArreglos();
             }
             else
@@ -111,6 +107,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             insertar();
             mostrarTS();
+            LimpiarCasillas();
 
         }
 
@@ -426,6 +423,98 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             EliminarTodosLosDatos();
             mostrarTS();
         }
+        public void OrdenarDescendente()
+        {
+            if (indice > 1)
+            {
+                bool intercambio;
+
+                do
+                {
+                    intercambio = false;
+
+                    for (int i = 0; i < indice - 1; i++)
+                    {
+                        if (memoria[i] < memoria[i + 1])
+                        {
+                            // Intercambiar elementos
+                            string tempNombre = nombres[i];
+                            string tempModelo = modelos[i];
+                            int tempMemoria = memoria[i];
+
+                            nombres[i] = nombres[i + 1];
+                            modelos[i] = modelos[i + 1];
+                            memoria[i] = memoria[i + 1];
+
+                            nombres[i + 1] = tempNombre;
+                            modelos[i + 1] = tempModelo;
+                            memoria[i + 1] = tempMemoria;
+
+                            intercambio = true;
+                        }
+                    }
+                } while (intercambio);
+
+                MessageBox.Show("Datos ordenados de manera descendente correctamente.");
+                ImprimirArreglos();
+                mostrarTS();
+            }
+            else
+            {
+                MessageBox.Show("No hay suficientes datos para ordenar.");
+            }
+        }
+        public void OrdenarAscendente()
+        {
+            if (indice > 1)
+            {
+                bool intercambio;
+
+                do
+                {
+                    intercambio = false;
+
+                    for (int i = 0; i < indice - 1; i++)
+                    {
+                        if (memoria[i] > memoria[i + 1])
+                        {
+                            // Intercambiar elementos
+                            string tempNombre = nombres[i];
+                            string tempModelo = modelos[i];
+                            int tempMemoria = memoria[i];
+
+                            nombres[i] = nombres[i + 1];
+                            modelos[i] = modelos[i + 1];
+                            memoria[i] = memoria[i + 1];
+
+                            nombres[i + 1] = tempNombre;
+                            modelos[i + 1] = tempModelo;
+                            memoria[i + 1] = tempMemoria;
+
+                            intercambio = true;
+                        }
+                    }
+                } while (intercambio);
+
+                MessageBox.Show("Datos ordenados de manera ascendente correctamente.");
+                ImprimirArreglos();
+                mostrarTS();
+            }
+            else
+            {
+                MessageBox.Show("No hay suficientes datos para ordenar.");
+            }
+        }
+
+        private void btnOrdenarDescendente_Click(object sender, EventArgs e)
+        {
+            OrdenarDescendente();
+        }
+
+        private void btnOrdenarAscendente_Click(object sender, EventArgs e)
+        {
+            OrdenarAscendente();
+        }
     }
- }
+}
 

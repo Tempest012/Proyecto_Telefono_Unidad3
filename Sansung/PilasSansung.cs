@@ -133,29 +133,34 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            NodoPila unNuevoNodo = new NodoPila();
-            unNuevoNodo.Nombre = textNumero.Text;
-            unNuevoNodo.Model = MDeModelo.Text;
-            unNuevoNodo.Memoria = Memoriasafhoaehef.Text;
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
+            {
+                NodoPila unNuevoNodo = new NodoPila();
+                unNuevoNodo.Nombre = textNumero.Text;
+                unNuevoNodo.Model = MDeModelo.Text;
+                unNuevoNodo.Memoria = Memoriasafhoaehef.Text;
 
-            if (double.TryParse(estabienbaratojoven.Text, out double precios))
-            {
-                unNuevoNodo.Precios = precios;
+                if (double.TryParse(estabienbaratojoven.Text, out double precios))
+                {
+                    unNuevoNodo.Precios = precios;
+                }
+                else
+                {
+
+                    MessageBox.Show("El valor de Precios no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Insertar(unNuevoNodo);
+                Mostrar();
+                LimpiarCasillas();
             }
-            else
-            {
-                
-                MessageBox.Show("El valor de Precios no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            Insertar(unNuevoNodo);
-            Mostrar();
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             EditarPila();
             Mostrar();
+            LimpiarCasillas();
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
@@ -185,6 +190,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public void LimpiarCasillas()
+        {
+            textNumero.Clear();
+            MDeModelo.Clear();
+            Memoriasafhoaehef.Clear();
+            estabienbaratojoven.Clear();
         }
     }
 }

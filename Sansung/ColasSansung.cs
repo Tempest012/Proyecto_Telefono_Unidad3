@@ -28,21 +28,26 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
         public void InsertaCola()
         {
-            NodoCola Nuevo = new NodoCola();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model = Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
+            {
 
-            if (Primero == null)
-            {
-                Primero = Nuevo;
-                Ultimo = Nuevo;
-            }
-            else
-            {
-                Ultimo.Siguiente = Nuevo;
-                Ultimo = Nuevo;
+
+                NodoCola Nuevo = new NodoCola();
+                Nuevo.Dato = Convert.ToString(textNumero.Text);
+                Nuevo.Model = Convert.ToString(MDeModelo.Text);
+                Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+                if (Primero == null)
+                {
+                    Primero = Nuevo;
+                    Ultimo = Nuevo;
+                }
+                else
+                {
+                    Ultimo.Siguiente = Nuevo;
+                    Ultimo = Nuevo;
+                }
             }
         }
         public void MostraCola()

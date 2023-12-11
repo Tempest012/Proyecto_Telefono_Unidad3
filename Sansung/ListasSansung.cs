@@ -41,26 +41,30 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             insertar();
             mostrarDG();
+            LimpiarCasillas();
         }
         public void insertar()
         {
-            Nodo Nuevo = new Nodo();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model=Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria=Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios=Convert.ToDouble(estabienbaratojoven.Text);
-            
-            if (Primero == null)
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty) 
             {
-                Primero = Nuevo;
-                Primero.Siguiente = null;
-                Ultimo = Nuevo;
-            }
-            else
-            {
-                Ultimo.Siguiente = Nuevo;
-                Nuevo.Siguiente = null;
-                Ultimo = Nuevo;
+                Nodo Nuevo = new Nodo();
+                Nuevo.Dato = Convert.ToString(textNumero.Text);
+                Nuevo.Model = Convert.ToString(MDeModelo.Text);
+                Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+                if (Primero == null)
+                {
+                    Primero = Nuevo;
+                    Primero.Siguiente = null;
+                    Ultimo = Nuevo;
+                }
+                else
+                {
+                    Ultimo.Siguiente = Nuevo;
+                    Nuevo.Siguiente = null;
+                    Ultimo = Nuevo;
+                }
             }
         }
         public void mostrarDG()
@@ -88,29 +92,34 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
         public void ModificarNodo()
         {
-            Nodo Actual = new Nodo();
-            Actual = Primero;
-            bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textBuscar.Text);
-            if (Primero != null)
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
             {
-                while (Actual != null && Encontrado != true)
+
+
+                Nodo Actual = new Nodo();
+                Actual = Primero;
+                bool Encontrado = false;
+                string nodoBuscado = Convert.ToString(textBuscar.Text);
+                if (Primero != null)
                 {
-                    if (Actual.Dato == nodoBuscado)
+                    while (Actual != null && Encontrado != true)
                     {
-                        Actual.Dato = Convert.ToString(textNumero.Text);
-                        Actual.Model = Convert.ToString(MDeModelo.Text);
-                        Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-                        Actual.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+                        if (Actual.Dato == nodoBuscado)
+                        {
+                            Actual.Dato = Convert.ToString(textNumero.Text);
+                            Actual.Model = Convert.ToString(MDeModelo.Text);
+                            Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                            Actual.Precios = Convert.ToDouble(estabienbaratojoven.Text);
 
 
-                        Encontrado = true;
+                            Encontrado = true;
+                        }
+                        Actual = Actual.Siguiente;
                     }
-                    Actual = Actual.Siguiente;
-                }
-                if (!Encontrado)
-                {
-                    MessageBox.Show("No se encontró");
+                    if (!Encontrado)
+                    {
+                        MessageBox.Show("No se encontró");
+                    }
                 }
             }
            
@@ -171,6 +180,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             ModificarNodo();
             mostrarDG();
+            LimpiarCasillas();
         }
 
         private void textNumero_TextChanged(object sender, EventArgs e)
@@ -226,91 +236,102 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
         public void InsertarAlPrincipio()
         {
-            Nodo Nuevo = new Nodo();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model = Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
-
-            Nuevo.Siguiente = Primero;
-            Primero = Nuevo;
-
-            if (Ultimo == null)
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
             {
-                Ultimo = Primero;
-            }
 
+
+                Nodo Nuevo = new Nodo();
+                Nuevo.Dato = Convert.ToString(textNumero.Text);
+                Nuevo.Model = Convert.ToString(MDeModelo.Text);
+                Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+                Nuevo.Siguiente = Primero;
+                Primero = Nuevo;
+
+                if (Ultimo == null)
+                {
+                    Ultimo = Primero;
+                }
+            }
             LimpiarCasillas();
             mostrarDG();
         }
 
         public void InsertarEnMedio()
         {
-            // Puedes ajustar la posición según tus necesidades
-            int posicion = 2; // Por ejemplo, insertar en la segunda posición
+            int posicion = 2;
+            if (textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
+            {
 
-            Nodo Nuevo = new Nodo();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model = Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+            
+                Nodo Nuevo = new Nodo();
+                Nuevo.Dato = Convert.ToString(textNumero.Text);
+                Nuevo.Model = Convert.ToString(MDeModelo.Text);
+                Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
 
-            if (Primero == null)
-            {
-                Primero = Nuevo;
-                Ultimo = Nuevo;
-            }
-            else if (posicion == 1)
-            {
-                Nuevo.Siguiente = Primero;
-                Primero = Nuevo;
-            }
-            else
-            {
-                Nodo Actual = Primero;
-                for (int i = 1; i < posicion - 1 && Actual != null; i++)
+                if (Primero == null)
                 {
-                    Actual = Actual.Siguiente;
+                    Primero = Nuevo;
+                    Ultimo = Nuevo;
                 }
-
-                if (Actual != null)
+                else if (posicion == 1)
                 {
-                    Nuevo.Siguiente = Actual.Siguiente;
-                    Actual.Siguiente = Nuevo;
+                    Nuevo.Siguiente = Primero;
+                    Primero = Nuevo;
                 }
                 else
                 {
-                    MessageBox.Show("La posición especificada no es válida.");
-                    return;
+                    Nodo Actual = Primero;
+                    for (int i = 1; i < posicion - 1 && Actual != null; i++)
+                    {
+                        Actual = Actual.Siguiente;
+                    }
+
+                    if (Actual != null)
+                    {
+                        Nuevo.Siguiente = Actual.Siguiente;
+                        Actual.Siguiente = Nuevo;
+                    }
+                    else
+                    {
+                        MessageBox.Show("La posición especificada no es válida.");
+                        return;
+                    }
+                }
+
+                if (Nuevo.Siguiente == null)
+                {
+                Ultimo = Nuevo;
                 }
             }
-
-            if (Nuevo.Siguiente == null)
-            {
-                Ultimo = Nuevo;
-            }
-
             LimpiarCasillas();
             mostrarDG();
         }
 
         public void InsertarAlFinal()
         {
-            Nodo Nuevo = new Nodo();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model = Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+            if(textNumero.Text != string.Empty && MDeModelo.Text != string.Empty && Memoriasafhoaehef.Text != string.Empty)
+            {
 
-            if (Primero == null)
-            {
-                Primero = Nuevo;
-                Ultimo = Nuevo;
-            }
-            else
-            {
-                Ultimo.Siguiente = Nuevo;
-                Ultimo = Nuevo;
+            
+                Nodo Nuevo = new Nodo();
+                Nuevo.Dato = Convert.ToString(textNumero.Text);
+                Nuevo.Model = Convert.ToString(MDeModelo.Text);
+                Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+                Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+                if (Primero == null)
+                {
+                    Primero = Nuevo;
+                    Ultimo = Nuevo;
+                }
+                else
+                {
+                    Ultimo.Siguiente = Nuevo;
+                    Ultimo = Nuevo;
+                }
             }
 
             LimpiarCasillas();
@@ -323,6 +344,10 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             MDeModelo.Clear();
             Memoriasafhoaehef.Clear();
             estabienbaratojoven.Clear();
+        }
+        public void OordenDescendente()
+        {
+            
         }
 
         private void btnInsertarAlPrincipio_Click(object sender, EventArgs e)
@@ -341,6 +366,113 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             InsertarAlFinal();
             mostrarDG();
+        }
+        public void OrdenarDescendente()
+        {
+            if (Primero == null || Primero.Siguiente == null)
+            {
+                return;
+            }
+
+            Nodo i, j;
+            bool intercambio;
+
+            for (i = Primero; i != null; i = i.Siguiente)
+            {
+                intercambio = false;
+
+                for (j = Primero; j.Siguiente != null; j = j.Siguiente)
+                {
+                    if (j.Precios < j.Siguiente.Precios)
+                    {
+                        Nodo temp = new Nodo
+                        {
+                            Dato = j.Dato,
+                            Model = j.Model,
+                            Memoria = j.Memoria,
+                            Precios = j.Precios
+                        };
+
+                        j.Dato = j.Siguiente.Dato;
+                        j.Model = j.Siguiente.Model;
+                        j.Memoria = j.Siguiente.Memoria;
+                        j.Precios = j.Siguiente.Precios;
+
+                        j.Siguiente.Dato = temp.Dato;
+                        j.Siguiente.Model = temp.Model;
+                        j.Siguiente.Memoria = temp.Memoria;
+                        j.Siguiente.Precios = temp.Precios;
+
+                        intercambio = true;
+                    }
+                }
+
+                if (!intercambio)
+                {
+                    break;
+                }
+            }
+
+            mostrarDG();
+        }
+        public void OrdenarAscendente()
+        {
+            if (Primero == null || Primero.Siguiente == null)
+            {
+                return;
+            }
+
+            Nodo i, j;
+            bool intercambio;
+
+            for (i = Primero; i != null; i = i.Siguiente)
+            {
+                intercambio = false;
+
+                for (j = Primero; j.Siguiente != null; j = j.Siguiente)
+                {
+                    if (j.Precios > j.Siguiente.Precios)
+                    {
+                        Nodo temp = new Nodo
+                        {
+                            Dato = j.Dato,
+                            Model = j.Model,
+                            Memoria = j.Memoria,
+                            Precios = j.Precios
+                        };
+
+                        j.Dato = j.Siguiente.Dato;
+                        j.Model = j.Siguiente.Model;
+                        j.Memoria = j.Siguiente.Memoria;
+                        j.Precios = j.Siguiente.Precios;
+
+                        j.Siguiente.Dato = temp.Dato;
+                        j.Siguiente.Model = temp.Model;
+                        j.Siguiente.Memoria = temp.Memoria;
+                        j.Siguiente.Precios = temp.Precios;
+
+                        intercambio = true;
+                    }
+                }
+
+                if (!intercambio)
+                {
+                    break;
+                }
+            }
+
+            mostrarDG();
+        }
+
+        
+        private void btnOrdenarDescendente_Click(object sender, EventArgs e)
+        {
+            OrdenarDescendente();
+        }
+
+        private void btnOrdenarAscendente_Click(object sender, EventArgs e)
+        {
+            OrdenarAscendente();
         }
     }
 }

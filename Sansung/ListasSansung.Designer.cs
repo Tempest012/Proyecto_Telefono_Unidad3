@@ -51,6 +51,8 @@
             this.btnInsertarAlPrincipio = new System.Windows.Forms.Button();
             this.btnInsertarEnMedio = new System.Windows.Forms.Button();
             this.btnInsertarAlFinal = new System.Windows.Forms.Button();
+            this.btnOrdenarDescendente = new System.Windows.Forms.Button();
+            this.btnOrdenarAscendente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -268,11 +270,33 @@
             this.btnInsertarAlFinal.UseVisualStyleBackColor = true;
             this.btnInsertarAlFinal.Click += new System.EventHandler(this.btnInsertarAlFinal_Click_1);
             // 
+            // btnOrdenarDescendente
+            // 
+            this.btnOrdenarDescendente.Location = new System.Drawing.Point(565, 428);
+            this.btnOrdenarDescendente.Name = "btnOrdenarDescendente";
+            this.btnOrdenarDescendente.Size = new System.Drawing.Size(172, 23);
+            this.btnOrdenarDescendente.TabIndex = 19;
+            this.btnOrdenarDescendente.Text = "Ordenar Descendente";
+            this.btnOrdenarDescendente.UseVisualStyleBackColor = true;
+            this.btnOrdenarDescendente.Click += new System.EventHandler(this.btnOrdenarDescendente_Click);
+            // 
+            // btnOrdenarAscendente
+            // 
+            this.btnOrdenarAscendente.Location = new System.Drawing.Point(323, 428);
+            this.btnOrdenarAscendente.Name = "btnOrdenarAscendente";
+            this.btnOrdenarAscendente.Size = new System.Drawing.Size(174, 23);
+            this.btnOrdenarAscendente.TabIndex = 20;
+            this.btnOrdenarAscendente.Text = "Ordenar Ascendente";
+            this.btnOrdenarAscendente.UseVisualStyleBackColor = true;
+            this.btnOrdenarAscendente.Click += new System.EventHandler(this.btnOrdenarAscendente_Click);
+            // 
             // ListasSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 603);
+            this.Controls.Add(this.btnOrdenarAscendente);
+            this.Controls.Add(this.btnOrdenarDescendente);
             this.Controls.Add(this.btnInsertarAlFinal);
             this.Controls.Add(this.btnInsertarEnMedio);
             this.Controls.Add(this.btnInsertarAlPrincipio);
@@ -327,5 +351,7 @@
         private System.Windows.Forms.Button btnInsertarAlPrincipio;
         private System.Windows.Forms.Button btnInsertarEnMedio;
         private System.Windows.Forms.Button btnInsertarAlFinal;
+        private System.Windows.Forms.Button btnOrdenarDescendente;
+        private System.Windows.Forms.Button btnOrdenarAscendente;
     }
 }

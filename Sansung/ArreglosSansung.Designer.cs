@@ -46,6 +46,8 @@
             this.btnInsertarEnMedio = new System.Windows.Forms.Button();
             this.btnInsertarAlFinal = new System.Windows.Forms.Button();
             this.btnEliminarTodos = new System.Windows.Forms.Button();
+            this.btnOrdenarDescendente = new System.Windows.Forms.Button();
+            this.btnOrdenarAscendente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -223,11 +225,33 @@
             this.btnEliminarTodos.UseVisualStyleBackColor = true;
             this.btnEliminarTodos.Click += new System.EventHandler(this.btnEliminarTodos_Click);
             // 
+            // btnOrdenarDescendente
+            // 
+            this.btnOrdenarDescendente.Location = new System.Drawing.Point(341, 453);
+            this.btnOrdenarDescendente.Name = "btnOrdenarDescendente";
+            this.btnOrdenarDescendente.Size = new System.Drawing.Size(154, 23);
+            this.btnOrdenarDescendente.TabIndex = 20;
+            this.btnOrdenarDescendente.Text = "OrdenarDescendente";
+            this.btnOrdenarDescendente.UseVisualStyleBackColor = true;
+            this.btnOrdenarDescendente.Click += new System.EventHandler(this.btnOrdenarDescendente_Click);
+            // 
+            // btnOrdenarAscendente
+            // 
+            this.btnOrdenarAscendente.Location = new System.Drawing.Point(513, 453);
+            this.btnOrdenarAscendente.Name = "btnOrdenarAscendente";
+            this.btnOrdenarAscendente.Size = new System.Drawing.Size(169, 23);
+            this.btnOrdenarAscendente.TabIndex = 21;
+            this.btnOrdenarAscendente.Text = "Ordenar Ascendente";
+            this.btnOrdenarAscendente.UseVisualStyleBackColor = true;
+            this.btnOrdenarAscendente.Click += new System.EventHandler(this.btnOrdenarAscendente_Click);
+            // 
             // ArreglosSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 555);
+            this.Controls.Add(this.btnOrdenarAscendente);
+            this.Controls.Add(this.btnOrdenarDescendente);
             this.Controls.Add(this.btnEliminarTodos);
             this.Controls.Add(this.btnInsertarAlFinal);
             this.Controls.Add(this.btnInsertarEnMedio);
@@ -276,5 +300,7 @@
         private System.Windows.Forms.Button btnInsertarEnMedio;
         private System.Windows.Forms.Button btnInsertarAlFinal;
         private System.Windows.Forms.Button btnEliminarTodos;
+        private System.Windows.Forms.Button btnOrdenarDescendente;
+        private System.Windows.Forms.Button btnOrdenarAscendente;
     }
 }

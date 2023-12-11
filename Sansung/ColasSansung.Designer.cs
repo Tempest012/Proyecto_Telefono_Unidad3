@@ -119,11 +119,11 @@
             // DatosTable
             // 
             this.DatosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosTable.Location = new System.Drawing.Point(415, 73);
+            this.DatosTable.Location = new System.Drawing.Point(300, 92);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
-            this.DatosTable.Size = new System.Drawing.Size(481, 354);
+            this.DatosTable.Size = new System.Drawing.Size(666, 335);
             this.DatosTable.TabIndex = 33;
             this.DatosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosTable_CellContentClick);
             // 
