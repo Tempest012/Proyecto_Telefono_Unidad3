@@ -34,6 +34,10 @@
             this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.DatosTable = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemoriaRam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.MDeModelo = new System.Windows.Forms.TextBox();
@@ -43,7 +47,9 @@
             this.estabienbaratojoven = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Guardar
@@ -97,13 +103,46 @@
             // DatosTable
             // 
             this.DatosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosTable.Location = new System.Drawing.Point(305, 12);
+            this.DatosTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Precio,
+            this.Modelo,
+            this.MemoriaRam});
+            this.DatosTable.Location = new System.Drawing.Point(306, 59);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
-            this.DatosTable.Size = new System.Drawing.Size(483, 365);
+            this.DatosTable.Size = new System.Drawing.Size(733, 283);
             this.DatosTable.TabIndex = 5;
             this.DatosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
+            // 
+            // Modelo
+            // 
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.MinimumWidth = 6;
+            this.Modelo.Name = "Modelo";
+            this.Modelo.Width = 125;
+            // 
+            // MemoriaRam
+            // 
+            this.MemoriaRam.HeaderText = "MemoriaRam";
+            this.MemoriaRam.MinimumWidth = 6;
+            this.MemoriaRam.Name = "MemoriaRam";
+            this.MemoriaRam.Width = 125;
             // 
             // textBuscar
             // 
@@ -185,11 +224,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto_Telefono_Unidad3.Properties.Resources.e9e8755ea46b70379c483aaa886bc759;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1085, 620);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ListasSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1075, 603);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.estabienbaratojoven);
@@ -205,10 +255,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNumero);
             this.Controls.Add(this.Guardar);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "ListasSansung";
             this.Text = "ListasSansung";
             this.Load += new System.EventHandler(this.ListasSansung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +283,10 @@
         private System.Windows.Forms.TextBox estabienbaratojoven;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MemoriaRam;
     }
 }

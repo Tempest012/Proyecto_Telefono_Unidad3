@@ -63,9 +63,90 @@ namespace Proyecto_Telefono_Unidad3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _158515 {
+            get {
+                object obj = ResourceManager.GetObject("158515", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desktop_wallpaper_steam_workshop_determination_frisk_and_chara_frisk_undertale_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("desktop-wallpaper-steam-workshop-determination-frisk-and-chara-frisk-undertale-th" +
+                        "umbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e9e8755ea46b70379c483aaa886bc759 {
+            get {
+                object obj = ResourceManager.GetObject("e9e8755ea46b70379c483aaa886bc759", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Furina_Desktop_Wallpaper_2048x1152 {
+            get {
+                object obj = ResourceManager.GetObject("Furina-Desktop-Wallpaper-2048x1152", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap furina_genshin_impact_art_4k_wallpaper_uhdpaper_com_20_1_m {
+            get {
+                object obj = ResourceManager.GetObject("furina-genshin-impact-art-4k-wallpaper-uhdpaper.com-20@1@m", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagenNum {
+            get {
+                object obj = ResourceManager.GetObject("ImagenNum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SamsungLogo {
             get {
                 object obj = ResourceManager.GetObject("SamsungLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zelda {
+            get {
+                object obj = ResourceManager.GetObject("Zelda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

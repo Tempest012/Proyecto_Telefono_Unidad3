@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Proyecto_Telefono_Unidad3.Sansung
 {
@@ -117,7 +118,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
 
         }
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -142,7 +143,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
+
         }
 
 
@@ -231,8 +232,8 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
 
         public void EditarArrglo()
-        { 
-            
+        {
+
 
         }
 
@@ -262,7 +263,6 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
             List<int> indicesEncontrados = new List<int>();
 
-            // Busca todos los índices correspondientes al nombre
             for (int i = 0; i < nombres.Length; i++)
             {
                 if (nombres[i] == nombre)
@@ -271,7 +271,6 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                 }
             }
 
-            // Elimina los elementos encontrados en orden inverso para evitar problemas con los desplazamientos
             foreach (int indice in indicesEncontrados.OrderByDescending(x => x))
             {
                 EliminarElemento(indice);
@@ -283,7 +282,6 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         private void EliminarElemento(int indice)
         {
-            // Desplaza los elementos después del índice hacia atrás para "eliminar" el elemento
             for (int i = indice; i < this.indice - 1; i++)
             {
                 nombres[i] = nombres[i + 1];
@@ -291,10 +289,8 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                 memoria[i] = memoria[i + 1];
             }
 
-            // Decrementa el índice
             this.indice--;
 
-            // Redimensiona los arreglos para eliminar el último elemento duplicado
             Array.Resize(ref nombres, nombres.Length - 1);
             Array.Resize(ref modelos, modelos.Length - 1);
             Array.Resize(ref memoria, memoria.Length - 1);
@@ -308,5 +304,128 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             telefonoSansung.Show();
             this.Hide();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void InsertarAlPrincipio()
+        {
+            if (indice < nombres.Length)
+            {
+                for (int i = indice; i > 0; i--)
+                {
+                    nombres[i] = nombres[i - 1];
+                    modelos[i] = modelos[i - 1];
+                    memoria[i] = memoria[i - 1];
+                }
+
+                nombres[0] = textBox1.Text;
+                modelos[0] = textBox2.Text;
+                memoria[0] = Convert.ToInt32(textBox3.Text);
+
+                indice++;
+
+                ImprimirArreglos();
+                LimpiarCasillas();
+            }
+            else
+            {
+                MessageBox.Show("Se ha alcanzado el límite de los arreglos. No se pueden agregar más datos.");
+            }
+        }
+        public void InsertarEnMedio()
+        {
+            int posicion = 2; 
+
+            if (posicion >= 1 && posicion <= indice + 1 && indice < nombres.Length)
+            {
+                for (int i = indice; i >= posicion; i--)
+                {
+                    nombres[i] = nombres[i - 1];
+                    modelos[i] = modelos[i - 1];
+                    memoria[i] = memoria[i - 1];
+                }
+
+                nombres[posicion - 1] = textBox1.Text;
+                modelos[posicion - 1] = textBox2.Text;
+                memoria[posicion - 1] = Convert.ToInt32(textBox3.Text);
+
+                indice++;
+
+                ImprimirArreglos();
+                LimpiarCasillas();
+            }
+            else
+            {
+                MessageBox.Show("La posición especificada no es válida o se ha alcanzado el límite de los arreglos.");
+            }
+        }
+        public void InsertarAlFinal()
+        {
+            if (indice < nombres.Length)
+            {
+                nombres[indice] = textBox1.Text;
+                modelos[indice] = textBox2.Text;
+                memoria[indice] = Convert.ToInt32(textBox3.Text);
+
+                indice++;
+
+                ImprimirArreglos();
+                LimpiarCasillas();
+            }
+            else
+            {
+                MessageBox.Show("Se ha alcanzado el límite de los arreglos. No se pueden agregar más datos.");
+            }
+        }
+        private void LimpiarCasillas()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            pato.Clear();
+        }
+        public void EliminarTodosLosDatos()
+        {
+            indice = 0;
+
+            Array.Clear(nombres, 0, nombres.Length);
+            Array.Clear(modelos, 0, modelos.Length);
+            Array.Clear(memoria, 0, memoria.Length);
+
+            LimpiarCasillas();
+
+            MessageBox.Show("Se han eliminado todos los datos correctamente.");
+
+            ImprimirArreglos();
+            mostrarTS();
+        }
+
+        private void btnInsertarAlPrincipio_Click(object sender, EventArgs e)
+        {
+            InsertarAlPrincipio();
+            mostrarTS();
+
+        }
+
+        private void btnInsertarEnMedio_Click(object sender, EventArgs e)
+        {
+            InsertarEnMedio();
+            mostrarTS();
+        }
+
+        private void btnInsertarAlFinal_Click(object sender, EventArgs e)
+        {
+            InsertarAlFinal();
+            mostrarTS();
+        }
+
+        private void btnEliminarTodos_Click(object sender, EventArgs e)
+        {
+            EliminarTodosLosDatos();
+            mostrarTS();
+        }
     }
-}
+ }
+

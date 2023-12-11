@@ -13,113 +13,96 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 {
     public partial class PilasSansung : Form
     {
-        private Nodo Primero = new Nodo();
+        private NodoPila Primero = new NodoPila();
+        NodoPila _tope;
+        public NodoPila Tope()
+        {
+            return _tope;
+        }
         public PilasSansung()
         {
-            Primero = null;
             InitializeComponent();
+
+            dataGridView1.Columns.Add("Nombre", "Nombre");
+            dataGridView1.Columns.Add("Model", "Modelo");
+            dataGridView1.Columns.Add("Memoria", "Memoria");
+            dataGridView1.Columns.Add("Precios", "Precios");
         }
-        
+
+
         private void PilasSansung_Load(object sender, EventArgs e)
         {
 
         }
-        public void Insertar()
+        public void Insertar(NodoPila unNodo)
         {
-            Nodo Nuevo=new Nodo();
-            Nuevo.Dato = Convert.ToString(textNumero.Text);
-            Nuevo.Model = Convert.ToString(MDeModelo.Text);
-            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToString(estabienbaratojoven.Text);
-
-            Nuevo.Siguiente = Primero;
-            Primero=Nuevo;
-
-            MessageBox.Show("Elemento ingresado");
-        }
-        public void Mostrar()
-        {
-            DatosTable.Columns.Clear();
-            DatosTable.ColumnCount = 4;
-            DatosTable.Columns[0].Name = "Nombre";
-            DatosTable.Columns[1].Name = "Modelo";
-            DatosTable.Columns[2].Name = "Memoria";
-            DatosTable.Columns[3].Name = "Precios";
-
-            Nodo Actual = Primero;
-            if (Primero != null)
+            if (_tope == null)
             {
-                while(Actual != null)
-                {
-                    DatosTable.Rows.Add(Actual.Dato, Actual.Model, Actual.Memoria, Actual.Precios);
+                _tope = unNodo;
+            }
+            else
+            {
+                NodoPila auxiliar = _tope;
+                _tope = unNodo;
+                _tope.Siguiente= auxiliar;
+            }
 
-                    Actual = Actual.Siguiente;
-                }
+        }
+        void Mostrar()
+        {
+            dataGridView1.Rows.Clear();
+
+            if (Tope() != null)
+            {
+                MostrarPila(Tope());
+            }
+        }
+
+        void MostrarPila(NodoPila unNodo)
+        {
+            dataGridView1.Rows.Add(unNodo.Nombre, unNodo.Model, unNodo.Memoria, unNodo.Precios);
+
+            if (unNodo.Siguiente != null)
+            {
+                MostrarPila(unNodo.Siguiente);
             }
         }
         public void EditarPila()
         {
-            Nodo Actual = new Nodo();
-            Actual = Primero;
-            bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textBuscar.Text);
-
-            if(Primero != null)
+            if (_tope != null)
             {
-                while (Actual != null && Encontrado != true)
-                {
-                    if (Actual.Dato == nodoBuscado)
-                    {
-                        Actual.Dato = Convert.ToString(textNumero.Text);
-                        Actual.Model = Convert.ToString(MDeModelo.Text);
-                        Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-                        Actual.Precios = Convert.ToString(estabienbaratojoven.Text);
+                NodoPila nodoEditado = new NodoPila();
+                nodoEditado.Nombre = textNumero.Text;
+                nodoEditado.Model = MDeModelo.Text;
+                nodoEditado.Memoria = Memoriasafhoaehef.Text;
 
-
-                        Encontrado = true;
-                    }
-                    Actual = Actual.Siguiente;
-                }
-                if (!Encontrado)
+                if (double.TryParse(estabienbaratojoven.Text, out double precios))
                 {
-                    MessageBox.Show("No se encontró");
+                    nodoEditado.Precios = precios;
                 }
+                else
+                {
+                    MessageBox.Show("El valor de Precios no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                _tope = _tope.Siguiente;
+
+                Insertar(nodoEditado);
+
+                Mostrar();
             }
+            else
+            {
+                MessageBox.Show("La pila está vacía. No hay elementos para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
         public void EliminarPilas()
         {
-            Nodo Actual = new Nodo();
-            Actual = Primero;
-            Nodo Anterior = new Nodo();
-            Anterior = null;
-
-            bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textBuscar.Text);
-            if (Primero != null)
+            if(_tope != null)
             {
-                while (Actual != null && Encontrado != true)
-                {
-                    if (Actual.Dato == nodoBuscado)
-                    {
-
-                        if (Actual == Primero)
-                        {
-                            Primero = Primero.Siguiente;
-                        }
-                        else
-                        {
-                            Anterior.Siguiente = Actual.Siguiente;
-                        }
-                        Encontrado = true;
-                    }
-                    Anterior = Actual;
-                    Actual = Actual.Siguiente;
-
-                }
-                if (!Encontrado)
-                {
-                    MessageBox.Show("No se encontró");
-                }
+                _tope = _tope.Siguiente;
             }
         }
 
@@ -150,7 +133,22 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            Insertar();
+            NodoPila unNuevoNodo = new NodoPila();
+            unNuevoNodo.Nombre = textNumero.Text;
+            unNuevoNodo.Model = MDeModelo.Text;
+            unNuevoNodo.Memoria = Memoriasafhoaehef.Text;
+
+            if (double.TryParse(estabienbaratojoven.Text, out double precios))
+            {
+                unNuevoNodo.Precios = precios;
+            }
+            else
+            {
+                
+                MessageBox.Show("El valor de Precios no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Insertar(unNuevoNodo);
             Mostrar();
         }
 
@@ -166,16 +164,27 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Mostrar();
         }
 
-        private void DatosTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
             TelefonoSansung telefonoSansung = new TelefonoSansung();
             telefonoSansung.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

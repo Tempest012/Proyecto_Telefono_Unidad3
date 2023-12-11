@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Telefono_Unidad3.Clases
 {
-    internal class Nodo
+    public class NodoPila
     {
-        private string dato;
+        private string nombre;
         private string model;
         private string memoria;
         private double precios;
-        private Nodo siguiente;
+        private NodoPila siguiente;
 
-        public string Dato
+        public string Nombre
         {
-            get { return dato; }
-            set { dato = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
         public string Model
         {
             get { return model; }
-            set {  model = value; }
+            set { model = value; }
         }
         public string Memoria
         {
@@ -34,7 +34,7 @@ namespace Proyecto_Telefono_Unidad3.Clases
             get { return precios; }
             set { precios = value; }
         }
-        public Nodo Siguiente
+        public NodoPila Siguiente
         {
             get { return siguiente; }
             set { siguiente = value; }

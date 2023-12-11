@@ -35,7 +35,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             Nuevo.Dato = Convert.ToString(textNumero.Text);
             Nuevo.Model = Convert.ToString(MDeModelo.Text);
             Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-            Nuevo.Precios = Convert.ToString(estabienbaratojoven.Text);
+            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
 
             if (Primero == null)
             {
@@ -87,7 +87,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                         Actual.Dato = Convert.ToString(textNumero.Text);
                         Actual.Model = Convert.ToString(MDeModelo.Text);
                         Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
-                        Actual.Precios = Convert.ToString(estabienbaratojoven.Text);
+                        Actual.Precios = Convert.ToDouble(estabienbaratojoven.Text);
 
 
                         Encontrado = true;
@@ -202,6 +202,11 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             TelefonoSansung telefonoSansung = new TelefonoSansung();
             telefonoSansung.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

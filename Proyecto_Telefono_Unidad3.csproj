@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\NodoPila.cs" />
     <Compile Include="LogicaArreglo\TelefonoSansung.cs" />
     <Compile Include="RedMagic\ListarRedMagic.cs">
       <SubType>Form</SubType>
@@ -148,6 +149,29 @@
   <ItemGroup>
     <None Include="Sansung\img\SamsungLogo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\e9e8755ea46b70379c483aaa886bc759.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenNum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zelda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Furina-Desktop-Wallpaper-2048x1152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-wallpaper-steam-workshop-determination-frisk-and-chara-frisk-undertale-thumbnail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\158515.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\furina-genshin-impact-art-4k-wallpaper-uhdpaper.com-20%401%40m.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

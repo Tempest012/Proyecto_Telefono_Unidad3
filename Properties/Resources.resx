@@ -118,7 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SamsungLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sansung\img\SamsungLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenNum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenNum.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="158515" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\158515.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e9e8755ea46b70379c483aaa886bc759" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e9e8755ea46b70379c483aaa886bc759.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zelda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zelda.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desktop-wallpaper-steam-workshop-determination-frisk-and-chara-frisk-undertale-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desktop-wallpaper-steam-workshop-determination-frisk-and-chara-frisk-undertale-thumbnail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Furina-Desktop-Wallpaper-2048x1152" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Furina-Desktop-Wallpaper-2048x1152.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="furina-genshin-impact-art-4k-wallpaper-uhdpaper.com-20@1@m" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\furina-genshin-impact-art-4k-wallpaper-uhdpaper.com-20@1@m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
