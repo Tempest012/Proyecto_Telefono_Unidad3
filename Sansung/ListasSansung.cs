@@ -224,5 +224,123 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         {
 
         }
+        public void InsertarAlPrincipio()
+        {
+            Nodo Nuevo = new Nodo();
+            Nuevo.Dato = Convert.ToString(textNumero.Text);
+            Nuevo.Model = Convert.ToString(MDeModelo.Text);
+            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+            Nuevo.Siguiente = Primero;
+            Primero = Nuevo;
+
+            if (Ultimo == null)
+            {
+                Ultimo = Primero;
+            }
+
+            LimpiarCasillas();
+            mostrarDG();
+        }
+
+        public void InsertarEnMedio()
+        {
+            // Puedes ajustar la posición según tus necesidades
+            int posicion = 2; // Por ejemplo, insertar en la segunda posición
+
+            Nodo Nuevo = new Nodo();
+            Nuevo.Dato = Convert.ToString(textNumero.Text);
+            Nuevo.Model = Convert.ToString(MDeModelo.Text);
+            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+            if (Primero == null)
+            {
+                Primero = Nuevo;
+                Ultimo = Nuevo;
+            }
+            else if (posicion == 1)
+            {
+                Nuevo.Siguiente = Primero;
+                Primero = Nuevo;
+            }
+            else
+            {
+                Nodo Actual = Primero;
+                for (int i = 1; i < posicion - 1 && Actual != null; i++)
+                {
+                    Actual = Actual.Siguiente;
+                }
+
+                if (Actual != null)
+                {
+                    Nuevo.Siguiente = Actual.Siguiente;
+                    Actual.Siguiente = Nuevo;
+                }
+                else
+                {
+                    MessageBox.Show("La posición especificada no es válida.");
+                    return;
+                }
+            }
+
+            if (Nuevo.Siguiente == null)
+            {
+                Ultimo = Nuevo;
+            }
+
+            LimpiarCasillas();
+            mostrarDG();
+        }
+
+        public void InsertarAlFinal()
+        {
+            Nodo Nuevo = new Nodo();
+            Nuevo.Dato = Convert.ToString(textNumero.Text);
+            Nuevo.Model = Convert.ToString(MDeModelo.Text);
+            Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
+            Nuevo.Precios = Convert.ToDouble(estabienbaratojoven.Text);
+
+            if (Primero == null)
+            {
+                Primero = Nuevo;
+                Ultimo = Nuevo;
+            }
+            else
+            {
+                Ultimo.Siguiente = Nuevo;
+                Ultimo = Nuevo;
+            }
+
+            LimpiarCasillas();
+            mostrarDG();
+        }
+
+        public void LimpiarCasillas()
+        {
+            textNumero.Clear();
+            MDeModelo.Clear();
+            Memoriasafhoaehef.Clear();
+            estabienbaratojoven.Clear();
+        }
+
+        private void btnInsertarAlPrincipio_Click(object sender, EventArgs e)
+        {
+            InsertarAlPrincipio();
+            mostrarDG();
+        }
+
+        private void btnInsertarEnMedio_Click(object sender, EventArgs e)
+        {
+            InsertarEnMedio();
+            mostrarDG();
+        }
+      
+        private void btnInsertarAlFinal_Click_1(object sender, EventArgs e)
+        {
+            InsertarAlFinal();
+            mostrarDG();
+        }
     }
 }

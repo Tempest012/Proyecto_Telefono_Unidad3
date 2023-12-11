@@ -48,13 +48,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnInsertarAlPrincipio = new System.Windows.Forms.Button();
+            this.btnInsertarEnMedio = new System.Windows.Forms.Button();
+            this.btnInsertarAlFinal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DatosTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(15, 395);
+            this.Guardar.Location = new System.Drawing.Point(15, 535);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(100, 23);
             this.Guardar.TabIndex = 0;
@@ -82,7 +85,7 @@
             // 
             // Editar
             // 
-            this.Editar.Location = new System.Drawing.Point(141, 395);
+            this.Editar.Location = new System.Drawing.Point(160, 535);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(100, 23);
             this.Editar.TabIndex = 3;
@@ -92,7 +95,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(267, 395);
+            this.Eliminar.Location = new System.Drawing.Point(306, 535);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(100, 23);
             this.Eliminar.TabIndex = 4;
@@ -108,11 +111,11 @@
             this.Precio,
             this.Modelo,
             this.MemoriaRam});
-            this.DatosTable.Location = new System.Drawing.Point(306, 59);
+            this.DatosTable.Location = new System.Drawing.Point(323, 23);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
-            this.DatosTable.Size = new System.Drawing.Size(733, 283);
+            this.DatosTable.Size = new System.Drawing.Size(548, 362);
             this.DatosTable.TabIndex = 5;
             this.DatosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -216,7 +219,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(590, 395);
+            this.button1.Location = new System.Drawing.Point(964, 535);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
@@ -235,11 +238,44 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnInsertarAlPrincipio
+            // 
+            this.btnInsertarAlPrincipio.Location = new System.Drawing.Point(433, 535);
+            this.btnInsertarAlPrincipio.Name = "btnInsertarAlPrincipio";
+            this.btnInsertarAlPrincipio.Size = new System.Drawing.Size(127, 23);
+            this.btnInsertarAlPrincipio.TabIndex = 16;
+            this.btnInsertarAlPrincipio.Text = "InsertarAlPrincipio";
+            this.btnInsertarAlPrincipio.UseVisualStyleBackColor = true;
+            this.btnInsertarAlPrincipio.Click += new System.EventHandler(this.btnInsertarAlPrincipio_Click);
+            // 
+            // btnInsertarEnMedio
+            // 
+            this.btnInsertarEnMedio.Location = new System.Drawing.Point(580, 535);
+            this.btnInsertarEnMedio.Name = "btnInsertarEnMedio";
+            this.btnInsertarEnMedio.Size = new System.Drawing.Size(137, 23);
+            this.btnInsertarEnMedio.TabIndex = 17;
+            this.btnInsertarEnMedio.Text = "InsertarEnMedio";
+            this.btnInsertarEnMedio.UseVisualStyleBackColor = true;
+            this.btnInsertarEnMedio.Click += new System.EventHandler(this.btnInsertarEnMedio_Click);
+            // 
+            // btnInsertarAlFinal
+            // 
+            this.btnInsertarAlFinal.Location = new System.Drawing.Point(740, 535);
+            this.btnInsertarAlFinal.Name = "btnInsertarAlFinal";
+            this.btnInsertarAlFinal.Size = new System.Drawing.Size(131, 23);
+            this.btnInsertarAlFinal.TabIndex = 18;
+            this.btnInsertarAlFinal.Text = "InsertarAlFinal";
+            this.btnInsertarAlFinal.UseVisualStyleBackColor = true;
+            this.btnInsertarAlFinal.Click += new System.EventHandler(this.btnInsertarAlFinal_Click_1);
+            // 
             // ListasSansung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 603);
+            this.Controls.Add(this.btnInsertarAlFinal);
+            this.Controls.Add(this.btnInsertarEnMedio);
+            this.Controls.Add(this.btnInsertarAlPrincipio);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.estabienbaratojoven);
@@ -288,5 +324,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn MemoriaRam;
+        private System.Windows.Forms.Button btnInsertarAlPrincipio;
+        private System.Windows.Forms.Button btnInsertarEnMedio;
+        private System.Windows.Forms.Button btnInsertarAlFinal;
     }
 }
