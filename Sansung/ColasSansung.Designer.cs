@@ -110,7 +110,7 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(85, 455);
+            this.textBuscar.Location = new System.Drawing.Point(78, 454);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(100, 22);
             this.textBuscar.TabIndex = 34;
@@ -119,7 +119,7 @@
             // DatosTable
             // 
             this.DatosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosTable.Location = new System.Drawing.Point(297, 28);
+            this.DatosTable.Location = new System.Drawing.Point(415, 73);
             this.DatosTable.Name = "DatosTable";
             this.DatosTable.RowHeadersWidth = 51;
             this.DatosTable.RowTemplate.Height = 24;
@@ -129,7 +129,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(307, 501);
+            this.Eliminar.Location = new System.Drawing.Point(300, 525);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(100, 23);
             this.Eliminar.TabIndex = 32;
@@ -139,7 +139,7 @@
             // 
             // Editar
             // 
-            this.Editar.Location = new System.Drawing.Point(171, 501);
+            this.Editar.Location = new System.Drawing.Point(171, 525);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(100, 23);
             this.Editar.TabIndex = 31;
@@ -150,7 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 80);
+            this.label1.Location = new System.Drawing.Point(23, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 16);
             this.label1.TabIndex = 30;
@@ -167,7 +167,7 @@
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(53, 501);
+            this.Guardar.Location = new System.Drawing.Point(53, 525);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(100, 23);
             this.Guardar.TabIndex = 28;
@@ -177,11 +177,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(625, 501);
+            this.button1.Location = new System.Drawing.Point(891, 525);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 42;
-            this.button1.Text = "atras";
+            this.button1.Text = "Atras";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -190,7 +190,7 @@
             this.pictureBox1.Image = global::Proyecto_Telefono_Unidad3.Properties.Resources._158515;
             this.pictureBox1.Location = new System.Drawing.Point(3, -6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(946, 549);
+            this.pictureBox1.Size = new System.Drawing.Size(1061, 637);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 536);
+            this.ClientSize = new System.Drawing.Size(1059, 626);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.estabienbaratojoven);

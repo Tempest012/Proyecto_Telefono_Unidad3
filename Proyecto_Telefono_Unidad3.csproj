@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\NodoCola.cs" />
     <Compile Include="Clases\NodoPila.cs" />
     <Compile Include="LogicaArreglo\TelefonoSansung.cs" />
     <Compile Include="RedMagic\ListarRedMagic.cs">

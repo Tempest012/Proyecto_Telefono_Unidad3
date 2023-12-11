@@ -39,5 +39,10 @@ namespace Proyecto_Telefono_Unidad3.Clases
             get { return siguiente; }
             set { siguiente = value; }
         }
+
+        public static implicit operator NodoPila(NodoCola v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

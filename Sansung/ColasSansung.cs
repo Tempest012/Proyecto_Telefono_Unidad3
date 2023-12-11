@@ -13,15 +13,12 @@ namespace Proyecto_Telefono_Unidad3.Sansung
 {
     public partial class ColasSansung : Form
     {
-        private Nodo Primero = new Nodo();
-        private Nodo Ultimo = new Nodo();
-
+        private NodoCola Primero = null;
+        private NodoCola Ultimo = null;
 
 
         public ColasSansung()
         {
-            Primero = null;
-            Ultimo = null;
             InitializeComponent();
         }
 
@@ -31,7 +28,7 @@ namespace Proyecto_Telefono_Unidad3.Sansung
         }
         public void InsertaCola()
         {
-            Nodo Nuevo = new Nodo();
+            NodoCola Nuevo = new NodoCola();
             Nuevo.Dato = Convert.ToString(textNumero.Text);
             Nuevo.Model = Convert.ToString(MDeModelo.Text);
             Nuevo.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
@@ -40,16 +37,13 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             if (Primero == null)
             {
                 Primero = Nuevo;
-                Primero.Siguiente = null;
                 Ultimo = Nuevo;
             }
             else
             {
                 Ultimo.Siguiente = Nuevo;
-                Nuevo.Siguiente = null;
                 Ultimo = Nuevo;
             }
-
         }
         public void MostraCola()
         {
@@ -60,27 +54,23 @@ namespace Proyecto_Telefono_Unidad3.Sansung
             DatosTable.Columns[2].Name = "Memoria";
             DatosTable.Columns[3].Name = "Precios";
 
-
-            Nodo Actual = Primero;
-            if (Primero != null)
+            NodoCola Actual = Primero;
+            while (Actual != null)
             {
-                while (Actual != null)
-                {
-                    DatosTable.Rows.Add(Actual.Dato, Actual.Model, Actual.Memoria, Actual.Precios);
-
-                    Actual = Actual.Siguiente;
-                }
+                DatosTable.Rows.Add(Actual.Dato, Actual.Model, Actual.Memoria, Actual.Precios);
+                Actual = Actual.Siguiente;
             }
         }
         public void ModificaCola()
         {
-            Nodo Actual = new Nodo();
-            Actual = Primero;
-            bool Encontrado = false;
             string nodoBuscado = Convert.ToString(textBuscar.Text);
+
             if (Primero != null)
             {
-                while (Actual != null && Encontrado != true)
+                NodoCola Actual = Primero;
+                bool encontrado = false;
+
+                while (Actual != null && !encontrado)
                 {
                     if (Actual.Dato == nodoBuscado)
                     {
@@ -89,58 +79,43 @@ namespace Proyecto_Telefono_Unidad3.Sansung
                         Actual.Memoria = Convert.ToString(Memoriasafhoaehef.Text);
                         Actual.Precios = Convert.ToDouble(estabienbaratojoven.Text);
 
-
-                        Encontrado = true;
+                        encontrado = true;
                     }
+
                     Actual = Actual.Siguiente;
                 }
-                if (!Encontrado)
+
+                if (!encontrado)
                 {
-                    MessageBox.Show("No se encontró");
+                    MessageBox.Show("No se encontró el elemento a modificar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                MostraCola();
             }
-        } 
+            else
+            {
+                MessageBox.Show("La cola está vacía", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         public void EditarCola()
         {
 
         }
         public void EliminarCola()
         {
-            Nodo Actual = new Nodo();
-            Actual = Primero;
-            Nodo Anterior = new Nodo();
-            Anterior = null;
-
-            bool Encontrado = false;
-            string nodoBuscado = Convert.ToString(textBuscar.Text);
             if (Primero != null)
             {
-                while (Actual != null && Encontrado != true)
-                {
-                    if (Actual.Dato == nodoBuscado)
-                    {
+                Primero = Primero.Siguiente;
 
-                        if (Actual == Primero)
-                        {
-                            Primero = Primero.Siguiente;
-                        }
-                        else if (Actual == Ultimo)
-                        {
-                            Anterior.Siguiente = null;
-                            Ultimo = Anterior;
-                        }
-                        else
-                        {
-                            Anterior.Siguiente = Actual.Siguiente;
-                        }
-                        Encontrado = true;
-                    }
-                    Actual = Actual.Siguiente;
-                }
-                if (!Encontrado)
+                if (Primero == null)
                 {
-                    MessageBox.Show("No se encontró");
+                    Ultimo = null;
                 }
+            }
+            else
+            {
+                MessageBox.Show("La cola está vacía", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
